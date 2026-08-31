@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuj Agrawal — Technical Architect</title>
+<meta name="description" content="Anuj Agrawal — Technical Architect specializing in multi-cloud enterprise systems (Azure, AWS, .NET). IEEE Senior Member. 16+ years with Fortune 500 clients in healthcare and energy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F3864;          /* deep drawing ink */
+    --text:#2E3A46;         /* slate body */
+    --muted:#5B6B7A;
+    --paper:#FAFBFC;        /* cool engineering paper */
+    --rule:#CBD5DE;         /* fine rule lines */
+    --rule-strong:#8FA1B1;
+    --mark:#B03A2E;         /* redline markup, used sparingly */
+    --maxw:860px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Archivo',system-ui,-apple-system,sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    font-size:16.5px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+  a:hover{text-decoration-color:var(--mark)}
+  a:focus-visible{outline:2px solid var(--mark);outline-offset:2px;border-radius:2px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  /* ---------- hero title block ---------- */
+  header{
+    border-bottom:2px solid var(--ink);
+    background:
+      linear-gradient(var(--paper) 0 0) padding-box,
+      var(--paper);
+    background-image:
+      linear-gradient(to right, rgba(31,56,100,.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(31,56,100,.055) 1px, transparent 1px);
+    background-size:44px 44px;
+  }
+  .hero{padding:76px 28px 0}
+  .hero-inner{max-width:var(--maxw);margin:0 auto}
+  h1{
+    font-size:clamp(2.3rem,6vw,3.4rem);
+    font-weight:700;
+    letter-spacing:-0.015em;
+    color:var(--ink);
+    line-height:1.06;
+  }
+  .role{
+    margin-top:14px;
+    font-size:clamp(1.02rem,2.4vw,1.18rem);
+    font-weight:500;
+    color:var(--text);
+    max-width:40ch;
+    line-height:1.45;
+  }
+  .role em{font-style:normal;color:var(--ink);font-weight:600}
+  .hero-links{margin:26px 0 0;font-size:.95rem}
+  .hero-links a{margin-right:22px}
+  /* ruled fact strip */
+  .facts{
+    margin-top:44px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--rule-strong);
+  }
+  .facts div{
+    padding:16px 18px 20px 0;
+    border-right:1px solid var(--rule);
+  }
+  .facts div:last-child{border-right:none}
+  .facts div + div{padding-left:18px}
+  .facts strong{
+    display:block;
+    font-size:1.32rem;
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  .facts span{font-size:.88rem;color:var(--muted)}
+
+  /* ---------- sections ---------- */
+  main{padding:14px 0 40px}
+  section{padding:44px 0 8px}
+  h2{
+    font-size:1.28rem;
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:-0.005em;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--rule-strong);
+    margin-bottom:22px;
+  }
+  p.lede{max-width:68ch}
+  p + p{margin-top:14px}
+
+  /* spec-sheet rows for achievements */
+  .rows{border-top:1px solid var(--rule)}
+  .row{
+    display:grid;
+    grid-template-columns:190px 1fr;
+    gap:20px;
+    padding:16px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .row b{
+    font-weight:700;
+    color:var(--ink);
+    font-size:1.02rem;
+    line-height:1.4;
+  }
+  .row p{font-size:.98rem;max-width:60ch}
+
+  /* experience */
+  .job{padding:18px 0;border-bottom:1px solid var(--rule)}
+  .job:first-of-type{border-top:1px solid var(--rule)}
+  .job-head{display:flex;justify-content:space-between;gap:16px}
+  .job-head h3{flex:1 1 auto;min-width:0}
+  .job-head h3{font-size:1.04rem;font-weight:600;color:var(--ink)}
+  .job-head time{font-size:.9rem;color:var(--muted);white-space:nowrap;padding-top:2px}
+  .job p{font-size:.97rem;margin-top:6px;max-width:66ch}
+
+  /* publications */
+  .pub{padding:14px 0;border-bottom:1px solid var(--rule)}
+  .pub:first-of-type{border-top:1px solid var(--rule)}
+  .pub h3{font-size:1.02rem;font-weight:600;line-height:1.45}
+  .pub p{font-size:.92rem;color:var(--muted);margin-top:3px}
+
+  /* credentials two-col definition list */
+  .creds{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;border-top:1px solid var(--rule)}
+  .cred{padding:16px 0;border-bottom:1px solid var(--rule)}
+  .cred h3{font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+  .cred p{font-size:.95rem;line-height:1.65}
+
+  /* properties */
+  .props{font-size:.98rem;line-height:2.1}
+  .props a{white-space:nowrap;margin-right:6px}
+  .props .sep{color:var(--rule-strong);margin-right:6px}
+  .note{font-size:.88rem;color:var(--muted);margin-top:10px;max-width:64ch}
+
+  /* footer */
+  footer{
+    border-top:2px solid var(--ink);
+    padding:36px 0 56px;
+  }
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+  footer p{font-size:.92rem;color:var(--muted)}
+  footer nav a{margin-right:22px;font-size:.95rem}
+
+  @media (max-width:640px){
+    .facts{grid-template-columns:1fr}
+    .facts div{border-right:none;border-bottom:1px solid var(--rule);padding-left:0}
+    .facts div + div{padding-left:0}
+    .facts div:last-child{border-bottom:none}
+    .row{grid-template-columns:1fr;gap:4px}
+    .creds{grid-template-columns:1fr}
+    .hero{padding-top:56px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>Anuj Agrawal</h1>
+      <p class="role">Technical Architect — <em>multi-cloud enterprise systems</em> on Microsoft Azure and AWS, engineered for Fortune 500 scale in healthcare and energy.</p>
+      <p class="hero-links">
+        <a href="mailto:anujagrawal4@gmail.com">anujagrawal4@gmail.com</a>
+        <a href="https://www.linkedin.com/in/anujagrawal4/" rel="me">LinkedIn</a>
+        <a href="#writing">Writing</a>
+      </p>
+      <div class="facts" role="list">
+        <div role="listitem"><strong>16+ years</strong><span>enterprise software architecture</span></div>
+        <div role="listitem"><strong>IEEE Senior Member</strong><span>Computer Society, Dallas Section</span></div>
+        <div role="listitem"><strong>50+ applications</strong><span>under active architectural leadership</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2>Profile</h2>
+    <p class="lede">I design, modernize, and support enterprise-grade software platforms — currently as Technical Architect at HCLTech, leading architecture across 50+ enterprise applications for Occidental Petroleum on Azure, AWS, and Terraform-based infrastructure-as-code.</p>
+    <p class="lede">Before that, I spent over a decade architecting Tenet Healthcare's consumer digital platform: consolidating 200+ microsites into a unified Sitefinity multi-tenant architecture serving 65 hospitals and 450+ facilities, with HIPAA, ADA Section&nbsp;508, and WCAG&nbsp;2.1&nbsp;AA compliance built in from inception. My work spans .NET, Java, and Python systems, and I write publicly on cloud architecture and serverless design.</p>
+  </section>
+
+  <section id="impact">
+    <h2>Selected impact</h2>
+    <div class="rows">
+      <div class="row">
+        <b>~1M monthly visits</b>
+        <p>Architected the platforms powering Tenet Healthcare's revenue-generating consumer channels — online bill pay, paid classes and events, and patient scheduling — across 65 hospitals and 450+ facilities.</p>
+      </div>
+      <div class="row">
+        <b>200+ sites consolidated</b>
+        <p>Led migration of 200+ WordPress microsites into one Sitefinity multi-tenant platform, cutting release cycles 40% and deployment time 50%.</p>
+      </div>
+      <div class="row">
+        <b>60% faster publishing</b>
+        <p>Raised content-publishing velocity 60% and mobile page-load performance 40% through template inheritance, reusable widgets, and performance tuning.</p>
+      </div>
+      <div class="row">
+        <b>10,000 assessments/day</b>
+        <p>Engineered SHL's SODA Core platform — a global 24/7/365 assessment system serving 5,000+ clients across 130+ countries on distributed .NET.</p>
+      </div>
+      <div class="row">
+        <b>15+ engineers mentored</b>
+        <p>Ongoing technical mentorship, architecture reviews, and code-quality standards across onshore and offshore teams.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <article class="job">
+      <div class="job-head"><h3>Technical Architect — HCLTech</h3><time>Dec 2022 – present</time></div>
+      <p>Architecture across 50+ enterprise applications for Occidental Petroleum (Oct 2025 – present), spanning .NET, Java, Python, Azure, AWS, and Terraform. Previously led architecture and DevSecOps for Tenet Healthcare's consumer digital platform (Dec 2022 – Oct 2025).</p>
+    </article>
+    <article class="job">
+      <div class="job-head"><h3>Software Development Senior Specialist — NTT DATA</h3><time>Dec 2016 – Nov 2022</time></div>
+      <p>Led Tenet Healthcare's consumer-web modernization: ~40 public-facing hospital and medical-group websites, the 200+ microsite consolidation, and integrations for physician directories, scheduling, analytics, and accessibility.</p>
+    </article>
+    <article class="job">
+      <div class="job-head"><h3>Software Development Senior Analyst — Dell Services / NTT DATA (India)</h3><time>Jan 2010 – Nov 2016</time></div>
+      <p>Built SHL's global SODA Core assessment platform and Tenet Healthcare's enterprise identity and access systems — ADAM, eID, eTenet, and Hospital Intranet.</p>
+    </article>
+  </section>
+
+  <section id="writing">
+    <h2>Writing</h2>
+    <article class="pub">
+      <h3><a href="https://medium.com/@anujagrawal4/5-hidden-costs-of-azure-functions-at-enterprise-scale-and-how-architects-can-avoid-them-b5c630c55314">5 Hidden Costs of Azure Functions at Enterprise Scale — and How Architects Can Avoid Them</a></h3>
+      <p>Cold starts, telemetry volume, Service Bus scaling, dependency bottlenecks, and hosting-model tradeoffs. Also on <a href="https://dev.to/anujagrawal4/5-hidden-costs-of-azure-functions-at-enterprise-scale-and-how-architects-can-avoid-them-3o3">Dev.to</a>.</p>
+    </article>
+    <article class="pub">
+      <h3><a href="https://medium.com/@anujagrawal4/migrating-200-microsites-to-a-multi-tenant-cms-architecture-patterns-that-scale-b2da69ee69b4">Migrating 200+ Microsites to a Multi-Tenant CMS: Architecture Patterns That Scale</a></h3>
+      <p>Field-tested patterns from consolidating a national hospital network's web estate.</p>
+    </article>
+  </section>
+
+  <section id="credentials">
+    <h2>Credentials</h2>
+    <div class="creds">
+      <div class="cred">
+        <h3>Certifications</h3>
+        <p>Microsoft Azure Architect Technologies (AZ-303) · Azure Fundamentals · Sitefinity Certified Developer · Microsoft .NET Framework 4 Web Applications · SharePoint Server 2013 · MCPS · SQL Server 2012 · ITIL v3 Foundation · IBM DB2 v8.1</p>
+      </div>
+      <div class="cred">
+        <h3>Affiliation</h3>
+        <p>IEEE Senior Member, Computer Society — Dallas Section. Judge and reviewer for technical evaluation panels.</p>
+      </div>
+      <div class="cred">
+        <h3>Recognition</h3>
+        <p>Michael Dell Champions Award (2014) · On-the-Spot Award, Dell India (2013) · Tenet leadership recognition for the Sitefinity platform launch (2019)</p>
+      </div>
+      <div class="cred">
+        <h3>Education</h3>
+        <p>B.Tech, Computer Science &amp; Engineering — Dr. A.P.J. Abdul Kalam Technical University, India (2008)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="properties">
+    <h2>Representative live properties</h2>
+    <p class="props">
+      <a href="https://www.tenethealth.com">tenethealth.com</a><span class="sep">/</span>
+      <a href="https://www.abrazohealth.com/">abrazohealth.com</a><span class="sep">/</span>
+      <a href="https://www.dmc.org/">dmc.org</a><span class="sep">/</span>
+      <a href="https://www.thehospitalsofprovidence.com/">thehospitalsofprovidence.com</a><span class="sep">/</span>
+      <a href="https://www.baptisthealthsystem.com/">baptisthealthsystem.com</a>
+    </p>
+    <p class="note">Public-facing properties of the Tenet Healthcare digital platform I helped architect and modernize across employers from 2011 to 2025.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="mailto:anujagrawal4@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/anujagrawal4/">LinkedIn</a>
+      <a href="Anuj_Agrawal_CV.pdf">CV (PDF)</a>
+    </nav>
+    <p>Anuj Agrawal — Dallas, Texas</p>
+  </div>
+</footer>
+
+</body>
+</html>
