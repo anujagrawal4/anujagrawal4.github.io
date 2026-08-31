@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anujagrawal.dev/sitemap.xml
