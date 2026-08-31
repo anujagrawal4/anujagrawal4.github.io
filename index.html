@@ -269,18 +269,29 @@
   }
   @media (max-width:880px){
     .rail{
-      position:static;width:auto;flex-direction:row;flex-wrap:wrap;
-      align-items:center;gap:10px 26px;padding:22px 26px;
+      position:sticky;top:0;z-index:60;width:auto;
+      flex-direction:column;gap:8px;padding:14px 20px 10px;
     }
     .rail::after{top:auto;left:0;right:0;bottom:0;width:auto;height:3px;
       background:linear-gradient(90deg,var(--brass),rgba(194,160,92,.15))}
-    .rail nav{margin:0;flex-direction:row;gap:18px;flex-wrap:wrap}
-    .rail nav a{border:none;padding:2px 0}
+    .mark{font-size:1.12rem}
+    .mark small{font-size:.78rem;margin-top:2px}
+    .rail nav{
+      margin:0;flex-direction:row;gap:20px;flex-wrap:nowrap;
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scrollbar-width:none;padding-bottom:2px;
+    }
+    .rail nav::-webkit-scrollbar{display:none}
+    .rail nav a{border:none;padding:4px 0;white-space:nowrap;font-size:.92rem;flex:0 0 auto}
     .rail nav a i{display:none}
     .ieee,.topo{display:none}
-    .rail-contact{margin:0;width:100%;font-size:.88rem;line-height:1.6}
+    .rail-contact{margin:0;width:100%;font-size:.85rem;line-height:1.5}
     .rail-contact br,.rail-contact span{display:none}
-    .rail-contact a{margin-right:20px}
+    .rail-contact a{margin-right:18px}
+    .rail.condensed .mark small{display:none}
+    .rail.condensed .rail-contact{display:none}
+    .rail.condensed{padding:10px 20px 8px}
+    section,footer{scroll-margin-top:104px}
     .content{margin-left:0}
     .hero{padding:64px 0 54px}
     .band{grid-template-columns:1fr 1fr}
@@ -486,5 +497,18 @@
   </footer>
 </div>
 
+<script>
+(function(){
+  var rail = document.querySelector('.rail');
+  var mq = window.matchMedia('(max-width:880px)');
+  function onScroll(){
+    if(!mq.matches){ rail.classList.remove('condensed'); return; }
+    rail.classList.toggle('condensed', window.scrollY > 60);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
 </body>
 </html>
